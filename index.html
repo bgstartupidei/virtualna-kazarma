@@ -63,8 +63,7 @@
           <!-- Game Background: edit this -->
           <h1>Вирутална казарма</h1>
           <p>
-            Вирутална казарма е симулатор на българска казарма от времето
-            преди 2007 година.</a>.
+            Почти като истинска.
           </p>
           <!-- End of Game Background -->
 
@@ -90,7 +89,7 @@
 
             <!-- Game Title: edit this -->
             <h1>Виртуална казарма</h1>
-            <h2>от aquilax</h2>
+            <h2>от <a href="http://www.bgstartupidei.com/">#bgstartupidei</a></h2>
             <!-- End of Game Title -->
 
             <noscript><p class="noscript_message">Тази игра настоява за Javascript.</p></noscript>
@@ -149,6 +148,15 @@
          tutorial.game.js file for details of how this is used. -->
     <div id="content_library">
       <!-- Some situations defined entirely in the HTML -->
+      <div id="s_start">
+        <h1>От донаборник до наборник</h1>
+        <p>Дойде и твоят ред да служиш на родината.</p> <p>Денят е слънчев,
+        птичките пеят, майка ти плаче, баща ти се тюхка около нея и не
+        знае какво да каже.</p>
+        <p>Прегръщаш ги, вдигаш багажа си на рамо и се насочваш към портала
+        в който мудно се вливат и други младежи като теб.</p>
+        <p class='transient'>Влез в <a href='hub'>казармата</a></p>
+      </div>
 
       <!-- school -->
       <div id="school" class="situation transient" data-option-text="Учебна зала"
@@ -171,6 +179,20 @@
           почти веднага кара очите ти да се затворят.
         </p>
         <p>Сънуваш филия с лютеница.</p>
+        <p>Филията е дебела поне три пръста.</p>
+        <p>И лютеницата отгоре и тя е дебела поне три пръста.</p>
+        <p>И е поръсена със сиренце отгоре.</p>
+        <p>Натрошено с пръсти на средно големи парченца.</p>
+        <p>Посягаш да я стигнеш ама малко не ти достига</p>
+        <p>Напрягаш се отново и почтииии я стигаш</p>
+        <p>Усещаш грапавата корична на хляба със нокъта средния си пръст.</p>
+        <p><a href="school-sleep2">Продължаваш да спиш</a></p>
+      </div>
+
+      <div id="school-sleep2" class="situation">
+        <p>Събуждаш се от внезапна болка в тила.</p>
+        <p>Дебелият чичко те e зашлевил докато си спал.</p>
+        <p>Наказан си да прекараш няколко нощи в <a href="karcer">карцера</a></p>
       </div>
 
       <div id="school-ask" class="situation" data-option-text="Задай въпрос"
@@ -179,7 +201,6 @@
           Изпъваш ръка нагоре и втренчваш поглед в преподавателя.
         </p>
       </div>
-
 
       <!-- shooting-range -->
       <div id="shooting-range" class="situation" data-option-text="Стрелкови полигон"
@@ -195,24 +216,40 @@
       <div id="shooting-range-ak-47" class="situation" data-option-text="Стреляй с АК-47"
            data-tags="shooting-range-choices">
         <p>
-          АК-47 е по-добър от всеки друг автомат.
+          <a href="https://bg.wikipedia.org/wiki/%D0%90%D0%9A-47" target="_blank" class="sticky">АК-47</a>
+          е по-добър от всеки друг автомат.
         </p>
         <p>
-          Поглаждаш хладната стомана с длан
-          приплъзваш китката назад и мушкаш пръста върху спусъка.
+          Поглаждаш хладната стомана с длан, приплъзваш китката назад и мушкаш пръста върху спусъка.
         </p>
         <p>
           Присвиваш очи, навеждаш глава, затаяваш дъх. Чуваш туптенето на сърцето си
-          по тъпанчетата на ушите. Облизваш бавно устни, прицелваш се, стискаш.
+          по тъпанчетата на ушите. Облизваш бавно устни, прицелваш се и
+          <a href="shooting-range-ak-47-shoot">стискаш</a>.
         </p>
+      </div>
+
+      <div id="shooting-range-ak-47-shoot" class="situation" data-exit='system.animateQuality("motivation", character.qualities.motivation-1);system.setQuality("days", character.qualities.days+1);'>
         <p>
           Автомата засича.
+        </p>
+        <p>
+          Свеждаш глава. Може да се случи на всеки.
+          Връщаш се обратно към <a href="hub">картата</a>.
         </p>
       </div>
 
       <div id="kitchen" class="situation" data-option-text="Столова"
-           data-tags="barracks">
+           data-tags="barracks" data-choices="#kitchen-choices">
         <h1>Столова</h1>
+        <p>Столовата е най-важното място в цялата вселена.</p>
+        <p>Или поне в държавата.</p>
+        <p>Или поне в казармата.</p>
+        <p>Винаги когато я приближиш, се сещаш за мама и колко ти липсва. Тя и манджите и. Особено манджите и.</p>
+      </div>
+
+      <div id="kitchen-ask-food" class="situation" data-option-text="Питай какво има за ядене"
+           data-tags="kitchen-choices">
       </div>
 
       <div id="sleep" class="situation" data-option-text="Спалня"
@@ -228,6 +265,15 @@
       <div id="hub" class="situation" data-choices="#barracks"
            data-option-text="Карта на казармата">
         <h1 class="transient">Карта на казармата</h1>
+      </div>
+
+      <div id="karcer" class="situation" data-exit='system.setQuality("motivation", character.qualities.motivation-2);system.setQuality("intelligence", character.qualities.intelligence+1);system.setQuality("health", character.qualities.health-5);system.setQuality("days", character.qualities.days+3);'>
+        <h1 class="transient">Карцер</h1>
+        <p>Карцерът е тесен тъмен и като цяло силно неуютен.</p>
+        <p>За сметка на това има атмосфера, от канала за отпадни води, който се излива до него.</p>
+        <p>Може да не е приятно, но имаш време да помислиш за вселената и точно колко голяма точка си ти в нея</p>
+        <p>След неизвестно колко време, провидението отваря врата мощен глас изпсува нещо и ти позволяват
+        да се върнеш отново към <a href="hub">картата</a>.</p>
       </div>
     </div>
 

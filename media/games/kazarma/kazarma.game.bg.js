@@ -17,32 +17,23 @@ undum.game.version = "1.0";
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
-    start: new undum.SimpleSituation(
-        `<h1>От донаборник в наборник</h1>
-        <p>Дойде и твоят ред да служиш на родината.</p> <p>Денят е слънчев,
-        птичките пеят, майка ти плаче, баща ти се тюхка около нея и не
-        знае какво да каже.</p>
-        <p>Прегръщаш ги, вдигаш багажа си на рамо и се насочваш към
-        в който мудно се вливат и други младежи като теб.</p>
-        <p class='transient'>Влез в <a href='hub'>казармата</a></p>`
-    ),
+    start: new undum.Situation({
+        enter: function(character, system, from) {
+            system.write($("#s_start").html());
+        },
+    }),
 
-    // NB: The 'hub' situation which is the main list of topics, is
-    // defined wholly in the HTML file, and doesn't have an entry in
-    // the game.situations dictionary in this file.
-
-    // For variety, here we define a situation using the top-level
-    // Situation type. This is a neat approach to generate text by
-    // looking it up in the HTML document. For static text that makes
-    // more sense than writing it longhand.
     "implicit-map": new undum.Situation({
-        tags: ["school-choices", "shooting-range-choices"],
+        tags: [
+            "school-choices",
+            "shooting-range-choices"
+        ],
         enter: function(character, system, from) {
             system.doLink('hub');
         },
         optionText: "Обратно към картата",
         displayOrder: 10,
-    })
+    }),
 };
 
 // ---------------------------------------------------------------------------
@@ -63,8 +54,8 @@ undum.game.qualities = {
     fear: new undum.IntegerQuality(
         "Страх", {priority:"0001", group:'stats'}
     ),
-    obedience: new undum.IntegerQuality(
-        "Подчинение", {priority:"0001", group:'stats'}
+    motivation: new undum.IntegerQuality(
+        "Мотивация", {priority:"0001", group:'stats'}
     ),
     days: new undum.IntegerQuality(
         "Дни", {priority:"0001", group:'progress'}
@@ -79,7 +70,7 @@ undum.game.qualities = {
  * non-existent group. */
 undum.game.qualityGroups = {
     stats: new undum.QualityGroup(null, {priority:"0001"}),
-    progress: new undum.QualityGroup('Progress', {priority:"0002"})
+    progress: new undum.QualityGroup('Служба', {priority:"0002"})
 };
 
 // ---------------------------------------------------------------------------
@@ -87,8 +78,9 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
     character.qualities.health = 100;
-    character.qualities.intelligence = 100;
+    character.qualities.intelligence = 50;
+    character.qualities.motivation = 100;
     character.qualities.fear = 0;
-    character.qualities.obedience = 0;
+    character.qualities.days = 0;
     system.setCharacterText("<p>Началото на службата.</p>");
 };

@@ -1300,6 +1300,8 @@
                 optionText: $situation.attr("data-option-text"),
                 canView: parseFn($situation.attr("data-can-view")),
                 canChoose: parseFn($situation.attr("data-can-choose")),
+                enter: parseFn($situation.attr("data-enter")),
+                exit: parseFn($situation.attr("data-exit")),
                 priority: parse($situation.attr("data-priority")),
                 frequency: parse($situation.attr("data-frequency")),
                 displayOrder: parse($situation.attr("data-display-order")),
