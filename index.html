@@ -149,9 +149,85 @@
          tutorial.game.js file for details of how this is used. -->
     <div id="content_library">
       <!-- Some situations defined entirely in the HTML -->
-      <div id="hub" class="situation" data-choices="#topic"
-           data-option-text="Какво се прави в казармата">
-        <h1 class="transient">Казарма</h1>
+
+      <!-- school -->
+      <div id="school" class="situation transient" data-option-text="Учебна зала"
+           data-tags="barracks" data-choices="#school-choices">
+        <h1>Учебна зала</h1>
+        <p>
+          Учебната зала е средно голяма, боядисана с жълто-зелена блажна боя.
+          На стената висят рисунки на царе и генерали.
+        </p>
+        <p>
+          Преподавателят е червендалест чичко с внушителен мустак. Говори бавно
+          и монотонно за нещо но не чуваш добре точно какво.
+        </p>
+      </div>
+
+      <div id="school-sleep" class="situation" data-option-text="Поспи в час по теоретична подготовка"
+           data-tags="school-choices">
+        <p>
+          Снишаваш се на чина и слагаш глава върху ръцете си. Монотонният говор
+          почти веднага кара очите ти да се затворят.
+        </p>
+        <p>Сънуваш филия с лютеница.</p>
+      </div>
+
+      <div id="school-ask" class="situation" data-option-text="Задай въпрос"
+           data-tags="school-choices">
+        <p>
+          Изпъваш ръка нагоре и втренчваш поглед в преподавателя.
+        </p>
+      </div>
+
+
+      <!-- shooting-range -->
+      <div id="shooting-range" class="situation" data-option-text="Стрелкови полигон"
+           data-tags="barracks" data-choices="#shooting-range-choices">
+        <h1>Стрелкови полигон</h1>
+        <h2>Внимание! Тука се стреля!</h2>
+        <p>
+          Полигонът е прашно поле изпълнено с простреляни ламарини,
+          наподобяващи Врагът.
+        </p>
+      </div>
+
+      <div id="shooting-range-ak-47" class="situation" data-option-text="Стреляй с АК-47"
+           data-tags="shooting-range-choices">
+        <p>
+          АК-47 е по-добър от всеки друг автомат.
+        </p>
+        <p>
+          Поглаждаш хладната стомана с длан
+          приплъзваш китката назад и мушкаш пръста върху спусъка.
+        </p>
+        <p>
+          Присвиваш очи, навеждаш глава, затаяваш дъх. Чуваш туптенето на сърцето си
+          по тъпанчетата на ушите. Облизваш бавно устни, прицелваш се, стискаш.
+        </p>
+        <p>
+          Автомата засича.
+        </p>
+      </div>
+
+      <div id="kitchen" class="situation" data-option-text="Столова"
+           data-tags="barracks">
+        <h1>Столова</h1>
+      </div>
+
+      <div id="sleep" class="situation" data-option-text="Спалня"
+           data-tags="barracks">
+        <h1>Спалня</h1>
+      </div>
+
+      <div id="square" class="situation" data-option-text="Плац"
+           data-tags="barracks">
+        <h1>Плац</h1>
+      </div>
+
+      <div id="hub" class="situation" data-choices="#barracks"
+           data-option-text="Карта на казармата">
+        <h1 class="transient">Карта на казармата</h1>
       </div>
     </div>
 

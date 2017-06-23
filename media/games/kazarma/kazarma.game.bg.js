@@ -35,49 +35,14 @@ undum.game.situations = {
     // Situation type. This is a neat approach to generate text by
     // looking it up in the HTML document. For static text that makes
     // more sense than writing it longhand.
-    school: new undum.SimpleSituation(
-        `<p>Учебната зала е средно голяма, боядисана с жълто-зелена блажна боя.
-        На стената висят рисунки на царе и генерали.</p>
-        <p>Преподавателят е червендалест чичко с внушителен мустак. Говори бавно
-        и монотонно за нещо но не чуваш добре точно какво.</p>`,
-        {
-            heading: "Учебна зала",
-            diplayOrder: 1,
-            tags: ["topic"]
-        }
-    ),
-    polygon: new undum.SimpleSituation(
-        "",
-        {
-            heading: "Стрелкови полигон",
-            diplayOrder: 2,
-            tags: ["topic"]
-        }
-    ),
-    kitchen: new undum.SimpleSituation(
-        "",
-        {
-            heading: "Столова",
-            diplayOrder: 3,
-            tags: ["topic"]
-        }
-    ),
-    sleep: new undum.SimpleSituation(
-        "",
-        {
-            heading: "Спалня",
-            diplayOrder: 3,
-            tags: ["topic"]
-        }
-    ),
-    square: new undum.SimpleSituation(
-        "",
-        {
-            heading: "Плац",
-            diplayOrder: 3,
-            tags: ["topic"]
-        }
-    )
+    "implicit-map": new undum.Situation({
+        tags: ["school-choices", "shooting-range-choices"],
+        enter: function(character, system, from) {
+            system.doLink('hub');
+        },
+        optionText: "Обратно към картата",
+        displayOrder: 10,
+    })
 };
 
 // ---------------------------------------------------------------------------
