@@ -35,7 +35,7 @@ undum.game.situations = {
     // Situation type. This is a neat approach to generate text by
     // looking it up in the HTML document. For static text that makes
     // more sense than writing it longhand.
-    "school": new undum.SimpleSituation(
+    school: new undum.SimpleSituation(
         `<p>Учебната зала е средно голяма, боядисана с жълто-зелена блажна боя.
         На стената висят рисунки на царе и генерали.</p>
         <p>Преподавателят е червендалест чичко с внушителен мустак. Говори бавно
@@ -46,7 +46,7 @@ undum.game.situations = {
             tags: ["topic"]
         }
     ),
-    "polygon": new undum.SimpleSituation(
+    polygon: new undum.SimpleSituation(
         "",
         {
             heading: "Стрелкови полигон",
@@ -54,7 +54,7 @@ undum.game.situations = {
             tags: ["topic"]
         }
     ),
-    "kitchen": new undum.SimpleSituation(
+    kitchen: new undum.SimpleSituation(
         "",
         {
             heading: "Столова",
@@ -62,15 +62,15 @@ undum.game.situations = {
             tags: ["topic"]
         }
     ),
-    "sleep": new undum.SimpleSituation(
+    sleep: new undum.SimpleSituation(
         "",
         {
             heading: "Спалня",
             diplayOrder: 3,
             tags: ["topic"]
         }
-    )
-    "square": new undum.SimpleSituation(
+    ),
+    square: new undum.SimpleSituation(
         "",
         {
             heading: "Плац",
