@@ -18,13 +18,13 @@ undum.game.version = "1.0";
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
     start: new undum.SimpleSituation(
-        "<h1>От донаборник в наборник</h1>\
-        <p>Дойде и твоят ред да служиш на родината. Денят е слънчев, \
-        птичките пеят, майка ти плаче, баща ти се тюхка около нея и не \
-        знае какво да каже.</p>\
-        <p>Прегръщаш ги, вдигаш багажа си на рамо и се насочваш към \
-        в който мудно се вливат и други младежи като теб.</p>\
-        <p class='transient'>Влез в <a href='hub'>казармата</a></p>"
+        `<h1>От донаборник в наборник</h1>
+        <p>Дойде и твоят ред да служиш на родината.</p> <p>Денят е слънчев,
+        птичките пеят, майка ти плаче, баща ти се тюхка около нея и не
+        знае какво да каже.</p>
+        <p>Прегръщаш ги, вдигаш багажа си на рамо и се насочваш към
+        в който мудно се вливат и други младежи като теб.</p>
+        <p class='transient'>Влез в <a href='hub'>казармата</a></p>`
     ),
 
     // NB: The 'hub' situation which is the main list of topics, is
@@ -36,10 +36,10 @@ undum.game.situations = {
     // looking it up in the HTML document. For static text that makes
     // more sense than writing it longhand.
     "school": new undum.SimpleSituation(
-        "<p>Учебната зала е средно голяма, боядисана с жълто-зелена блажна боя.\
-        На стената висят рисунки на царе и генерали.</p>\
-        <p>Преподавателят е червендалест чичко с внушителен мустак. Говори бавно \
-        и монотонно за нещо но не чуваш добре какво.",
+        `<p>Учебната зала е средно голяма, боядисана с жълто-зелена блажна боя.
+        На стената висят рисунки на царе и генерали.</p>
+        <p>Преподавателят е червендалест чичко с внушителен мустак. Говори бавно
+        и монотонно за нещо но не чуваш добре точно какво.</p>`,
         {
             heading: "Учебна зала",
             diplayOrder: 1,
@@ -57,7 +57,23 @@ undum.game.situations = {
     "kitchen": new undum.SimpleSituation(
         "",
         {
-            heading: "Кухня",
+            heading: "Столова",
+            diplayOrder: 3,
+            tags: ["topic"]
+        }
+    ),
+    "sleep": new undum.SimpleSituation(
+        "",
+        {
+            heading: "Спалня",
+            diplayOrder: 3,
+            tags: ["topic"]
+        }
+    )
+    "square": new undum.SimpleSituation(
+        "",
+        {
+            heading: "Плац",
             diplayOrder: 3,
             tags: ["topic"]
         }
