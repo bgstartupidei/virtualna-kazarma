@@ -197,9 +197,12 @@
 
       <div id="school-ask" class="situation" data-option-text="Задай въпрос"
            data-tags="school-choices">
-        <p>
-          Изпъваш ръка нагоре и втренчваш поглед в преподавателя.
-        </p>
+        <p>Изпъваш ръка нагоре и втренчваш поглед в преподавателя.</p>
+        <p>Той се сепва и те поглежда с неразбиране</p>
+        <p>- Кажи?</p>
+        <p>- А защо е нужно да учим всичко това?</p>
+        <p>Изпращат те да <a href="toothbrush-polishing">почистиш пода</a> докато сам
+        откриеш отговор на този въпрос.</p>
       </div>
 
       <!-- shooting-range -->
@@ -268,12 +271,28 @@
       </div>
 
       <div id="karcer" class="situation" data-exit='system.setQuality("motivation", character.qualities.motivation-2);system.setQuality("intelligence", character.qualities.intelligence+1);system.setQuality("health", character.qualities.health-5);system.setQuality("days", character.qualities.days+3);'>
-        <h1 class="transient">Карцер</h1>
+        <h1>Карцер</h1>
         <p>Карцерът е тесен тъмен и като цяло силно неуютен.</p>
         <p>За сметка на това има атмосфера, от канала за отпадни води, който се излива до него.</p>
         <p>Може да не е приятно, но имаш време да помислиш за вселената и точно колко голяма точка си ти в нея</p>
         <p>След неизвестно колко време, провидението отваря врата мощен глас изпсува нещо и ти позволяват
         да се върнеш отново към <a href="hub">картата</a>.</p>
+      </div>
+      <div id="toothbrush-polishing" class="situation" data-exit='system.setQuality("motivation", character.qualities.motivation-2);system.setQuality("intelligence", character.qualities.intelligence-3);system.setQuality("health", character.qualities.health-3);system.setQuality("days", character.qualities.days+1);'>
+        <h1>Почистване</h1>
+        <p>Казармата е деликатно място.</p>
+        <p>Затова към нея е нужен деликатен подход.</p>
+        <p>Особено към чистотата.</p>
+        <p>Естествено следва извода че единствения начин за качествено почистване е с четка за зъби.</p>
+        <p>Работата не е лесна.</p>
+        <p>Имаш чувството че тук отдавна никой не е почиствал а и четката е малка.</p>
+        <p>Все пак се захващаш да чистиш.</p>
+        <p>... и чистиш,</p>
+        <p>... и чистиш,</p>
+        <p>След няколко часа те доближава старо куче.</p>
+        <p>Усмихва се.</p>
+        <p>Със сигурност оценява труда ти.</p>
+        <p>Рита те приятелски и ти позволява да се върнеш към <a href="hub">картата</a>.</p>
       </div>
     </div>
 
