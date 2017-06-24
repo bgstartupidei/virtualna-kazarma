@@ -327,21 +327,21 @@
         <p>Със сигурност оценява труда ти.</p>
         <p>Рита те приятелски и ти позволява да се върнеш към <a href="hub">картата</a>.</p>
       </div>
-    </div>
 
-    <div id="kletva" class="situation" data-option-text="Клетва" data-can-choose="return character.qualities.days > 45 && character.qualities.status==1" data-tags="barracks" data-exit='system.setQuality("status", character.qualities.status+1); system.setQuality("days", character.qualities.days+20)' data-can-view="return character.qualities.status==1">
-      <h1>Клетва</h1>
-      <p>Време е да се закълнеш във вярност</p>
-      <p>Цялата рода се е събрала, и всички ронят сълзи от умиление.</p>
-      <p>Минаваш по своя ред, издикламираш каквото са те научили и целуваш знамето.</p>
-      <p>Следват няколко дни домашен отпуск след който се връщаш в <a href="hub">казармата</a></p>
-    </div>
+      <div id="kletva" class="situation" data-option-text="Клетва" data-can-choose="return character.qualities.days > 45 && character.qualities.status==1" data-tags="barracks" data-exit='system.setQuality("status", character.qualities.status+1); system.setQuality("days", character.qualities.days+20)' data-can-view="return character.qualities.status==1">
+        <h1>Клетва</h1>
+        <p>Време е да се закълнеш във вярност</p>
+        <p>Цялата рода се е събрала, и всички ронят сълзи от умиление.</p>
+        <p>Минаваш по своя ред, издикламираш каквото са те научили и целуваш знамето.</p>
+        <p>Следват няколко дни домашен отпуск след който се връщаш в <a href="hub">казармата</a></p>
+      </div>
 
-    <div id="uvolnenie" class="situation" data-option-text="Уволнение" data-can-choose="return character.qualities.days > 270" data-tags="barracks" data-enter='system.setQuality("status", character.qualities.status+1); system.setQuality("days", character.qualities.days+20)'>
-      <h1>Уволнение</h1>
-      <p>Всичко свърши.</p>
-      <p>И докато ти можеш да напуснеш казармата, тя никога няма да те напусне.</p>
-      <p>Успех в наваксването на всичко, което си пропуснал!</p>
+      <div id="uvolnenie" class="situation" data-option-text="Уволнение" data-can-choose="return character.qualities.days > 270" data-tags="barracks" data-enter='system.setQuality("status", character.qualities.status+1); system.setQuality("days", character.qualities.days+20)'>
+        <h1>Уволнение</h1>
+        <p>Всичко свърши.</p>
+        <p>И докато ти можеш да напуснеш казармата, тя никога няма да те напусне.</p>
+        <p>Успех в наваксването на всичко, което си пропуснал!</p>
+      </div>
     </div>
 
     <!-- Load the libraries we depend on -->
