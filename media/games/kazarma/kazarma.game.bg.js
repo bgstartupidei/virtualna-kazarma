@@ -26,7 +26,10 @@ undum.game.situations = {
     "implicit-map": new undum.Situation({
         tags: [
             "school-choices",
-            "shooting-range-choices"
+            "shooting-range-choices",
+            "sleep-choices",
+            "kitchen-choices",
+            "square-choices"
         ],
         enter: function(character, system, from) {
             system.doLink('hub');
@@ -51,14 +54,14 @@ undum.game.qualities = {
     intelligence: new undum.IntegerQuality(
         "Интелигентност", {priority:"0001", group:'stats'}
     ),
-    fear: new undum.IntegerQuality(
-        "Страх", {priority:"0001", group:'stats'}
-    ),
     motivation: new undum.IntegerQuality(
         "Мотивация", {priority:"0001", group:'stats'}
     ),
+    status: new undum.WordScaleQuality(
+        "Ранк", ['донаборник', 'новобранец', 'войник', 'мъж'], {priority:"0001", group:'progress'}
+    ),
     days: new undum.IntegerQuality(
-        "Дни", {priority:"0001", group:'progress'}
+        "Дни", {priority:"0002", group:'progress'}
     )
 };
 
@@ -80,7 +83,8 @@ undum.game.init = function(character, system) {
     character.qualities.health = 100;
     character.qualities.intelligence = 50;
     character.qualities.motivation = 100;
-    character.qualities.fear = 0;
     character.qualities.days = 0;
-    system.setCharacterText("<p>Началото на службата.</p>");
+    character.qualities.status = 0;
+
+    // system.setCharacterText("<p>Началото на службата.</p>");
 };

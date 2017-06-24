@@ -155,7 +155,17 @@
         знае какво да каже.</p>
         <p>Прегръщаш ги, вдигаш багажа си на рамо и се насочваш към портала
         в който мудно се вливат и други младежи като теб.</p>
-        <p class='transient'>Влез в <a href='hub'>казармата</a></p>
+        <p class='transient'>Мини през <a href='portal'>портала</a></p>
+      </div>
+
+
+      <div id="portal" class="situation" data-option-text="Казармата" data-exit='system.setQuality("status", character.qualities.status+1)'>
+        <h1>Казармата</h1>
+        <p>Подаваш летящия лист от вонното окръжие на човека седнал зад малка маса с покривка проядена от молци.</p>
+        <p>Той те поглежда вяло, промърморва нещо и маха да продължиш напред.</p>
+        <p>Дават ти военна книжка, униформа, кубинки и ти посочват къде ще спиш, заедо с още 60 войника като теб.</p>
+        <p>Отбиването на военната ти служба започва тук и сега.</p>
+        <p class='transient'>Виж <a href='hub'>карта на казармата</a></p>
       </div>
 
       <!-- school -->
@@ -243,7 +253,7 @@
       </div>
 
       <div id="kitchen" class="situation" data-option-text="Столова"
-           data-tags="barracks" data-choices="#kitchen-choices">
+           data-tags="q-barracks" data-choices="#kitchen-choices">
         <h1>Столова</h1>
         <p>Столовата е най-важното място в цялата вселена.</p>
         <p>Или поне в държавата.</p>
@@ -253,16 +263,39 @@
 
       <div id="kitchen-ask-food" class="situation" data-option-text="Питай какво има за ядене"
            data-tags="kitchen-choices">
+        <p>- Какво има за ядене.</p>
       </div>
 
-      <div id="sleep" class="situation" data-option-text="Спалня"
-           data-tags="barracks">
+      <div id="sleep" class="situation transient" data-option-text="Спалня"
+           data-tags="barracks" data-choices="#sleep-choices">
         <h1>Спалня</h1>
+        <p>Спалното помещение е голяма стая с 30 легла на два етажа.</p>
+        <p>Леглата винаги трябва да са изрядни.</p>
       </div>
 
-      <div id="square" class="situation" data-option-text="Плац"
-           data-tags="barracks">
+      <div id="sleep-lay" class="situation" data-option-text="Легни да спиш" data-exit='system.animateQuality("motivation", character.qualities.motivation-1);system.setQuality("days", character.qualities.days+1); system.setQuality("health", character.qualities.health+1);' data-tags="sleep-choices">
+        <h1>Сън</h1>
+        <p>Лягаш да спиш след изтощителен ден</p>
+        <p>Събужда те мощен вик в 5 без 10</p>
+        <p>След 10 минути вече всички тичате по плаца за физарядка.</p>
+        <p>5:30 е време за тоалетна. Миене на лице, зъби и уши.</p>
+        <p>Следва оправяне на леглото и сутрешна проверка на плаца.</p>
+        <p>Сега вече може да се върнеш към <a href="hub">картата на казармата</a></p>
+      </div>
+
+      <div id="square" class="situation transient" data-option-text="Плац"
+           data-tags="barracks" data-choices="#square-choices">
         <h1>Плац</h1>
+        <p>Плацът е голям асфалтиран площад</p>
+        <p>Тук тичате всяка сутрин, а също така се провежда строевата подготовка.</p>
+      </div>
+
+      <div id="square-march" class="situation" data-option-text="Строева подготовка" data-exit='system.animateQuality("motivation", character.qualities.motivation-2);system.setQuality("days", character.qualities.days+1); system.setQuality("health", character.qualities.health+1);' data-tags="square-choices">
+        <h1>Строева подготовка</h1>
+        <p>Или казано с други думи, маршируване и отдаване на чест.</p>
+        <p>Състои се основно във набиване на крака в неудоби обувки.</p>
+        <p>Независимо какво е времето.</p>
+        <p>След като маршируваш 4 часа, може да се върнеш към <a href="hub">картата на казармата</a></p>
       </div>
 
       <div id="hub" class="situation" data-choices="#barracks"
@@ -294,6 +327,21 @@
         <p>Със сигурност оценява труда ти.</p>
         <p>Рита те приятелски и ти позволява да се върнеш към <a href="hub">картата</a>.</p>
       </div>
+    </div>
+
+    <div id="kletva" class="situation" data-option-text="Клетва" data-can-choose="return character.qualities.days > 45 && character.qualities.status==1" data-tags="barracks" data-exit='system.setQuality("status", character.qualities.status+1); system.setQuality("days", character.qualities.days+20)' data-can-view="return character.qualities.status==1">
+      <h1>Клетва</h1>
+      <p>Време е да се закълнеш във вярност</p>
+      <p>Цялата рода се е събрала, и всички ронят сълзи от умиление.</p>
+      <p>Минаваш по своя ред, издикламираш каквото са те научили и целуваш знамето.</p>
+      <p>Следват няколко дни домашен отпуск след който се връщаш в <a href="hub">казармата</a></p>
+    </div>
+
+    <div id="uvolnenie" class="situation" data-option-text="Уволнение" data-can-choose="return character.qualities.days > 270" data-tags="barracks" data-enter='system.setQuality("status", character.qualities.status+1); system.setQuality("days", character.qualities.days+20)'>
+      <h1>Уволнение</h1>
+      <p>Всичко свърши.</p>
+      <p>И докато ти можеш да напуснеш казармата, тя никога няма да те напусне.</p>
+      <p>Успех в наваксването на всичко, което си пропуснал!</p>
     </div>
 
     <!-- Load the libraries we depend on -->
