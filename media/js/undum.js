@@ -1517,6 +1517,12 @@
             return;
         }
 
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'link',
+          eventAction: code
+        });
+
         // Track where we're about to add new content.
         startOutputTransaction();
 
